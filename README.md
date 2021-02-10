@@ -8,7 +8,19 @@ Here are the following steps to reproduce:
 
 
 screen recording:
+
+
+
+
+
+
 ![](spannablebug.gif)
 
-You may also delete formats by tapping on the same style button on a styled span for your convenience
+You may also delete formats by tapping on the same style button on a section of text with that style for your convenience
+
+
+
+
+
+
 ![](showhowtodelete.gif)
