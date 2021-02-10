@@ -7,7 +7,7 @@ This is a bug because the expectation would be that the discrete sub spans creat
 2. It's worth mentioning that though this demo uses the `Spannable.SPAN_INCLUSIVE_INCLUSIVE`  flag for setting spans, there is also a bug with setting the spans with the `Spannable.SPAN_EXCLUSIVE_EXCLUSIVE` flag. By using the latter flag, adding a character, or backspacing at the end of a span that has two separate style spans within it will cause the child spans to be removed from the parent span.
 
 ***Here are the following steps to reproduce:***
-1. type in a word in the `EditText` field (ex. HellWord). This word is the parent span
+1. type in a word in the `EditText` field (ex. HelloWord). This word is the parent span
 2. highlight a portion of the word and press one of the style buttons at the top of the screen, very important that its's only a portion of the text and not the whole text typed in.
 3. highlight the remaining characters that have not been styled and apply the style you have not used by clicking it's respective button
 4. add a character at the end of the word you have styled or backspace at the end and observe the whole word becoming both styles
