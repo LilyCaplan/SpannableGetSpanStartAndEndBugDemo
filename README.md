@@ -3,11 +3,11 @@ This app is meant to illustrate a bug we have found with `Spannable`. A user wil
 This is a bug because the expectation would be that the discrete sub spans created within the parent span would maintain their integrity upon editing the end of a span, as it should only effect the sub span at the end of the parent span.
 
 **Other important pieces of information:**
-1. on some emulated devices the bug does not exist when using a physical keyboard. However it's always reproducible by using the emulator's IME keyboard.
+1. On some emulated devices the bug does not exist when using a physical keyboard. However it's always reproducible by using the emulator's IME keyboard.
 2. It's worth mentioning that though this demo uses the `Spannable.SPAN_INCLUSIVE_INCLUSIVE`  flag for setting spans, there is also a bug with setting the spans with the `Spannable.SPAN_EXCLUSIVE_EXCLUSIVE` flag. By using the latter flag, adding a character, or backspacing at the end of a span that has two separate style spans within it will cause the child spans to be removed from the parent span.
 
 ***Here are the following steps to reproduce:***
-1. type in a word in the `EditText` field (ex. HelloWord). This word is the parent span
+1. type in a word in the `EditText` field (ex. HelloWorld). This word is the parent span
 2. highlight a portion of the word and press one of the style buttons at the top of the screen, very important that its's only a portion of the text and not the whole text typed in.
 3. highlight the remaining characters that have not been styled and apply the style you have not used by clicking it's respective button
 4. add a character at the end of the word you have styled or backspace at the end and observe the whole word becoming both styles
