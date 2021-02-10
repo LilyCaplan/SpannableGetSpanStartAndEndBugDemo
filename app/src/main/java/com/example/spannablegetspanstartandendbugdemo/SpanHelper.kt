@@ -66,24 +66,6 @@ class SpanHelper(val editText: EditText) {
             )
 
             for (span in styleSpans) {
-                val spanStart = currentText.getSpanStart(span)
-                val spanEnd = currentText.getSpanEnd(span)
-                if (spanStart < selectionStart) {
-                    // need to add span before
-
-                    currentText.setSpan(
-                        StyleSpan(Typeface.BOLD), spanStart, selectionStart,
-                        Spannable.SPAN_INCLUSIVE_EXCLUSIVE
-                    )
-                }
-
-                if (spanEnd > selectionEnd) {
-                    // need to add span after
-                    currentText.setSpan(
-                        StyleSpan(Typeface.BOLD), selectionEnd, spanEnd,
-                        Spannable.SPAN_EXCLUSIVE_INCLUSIVE
-                    )
-                }
                 currentText.removeSpan(span)
             }
         } else if (spanType is StrikethroughSpan) {
@@ -92,26 +74,6 @@ class SpanHelper(val editText: EditText) {
                 StrikethroughSpan::class.java
             )
             for (strikethroughSpan in strikethroughSpans) {
-                val spanStart = currentText.getSpanStart(strikethroughSpan)
-                val spanEnd = currentText.getSpanEnd(strikethroughSpan)
-                if (spanStart < selectionStart) {
-                    // need to add span before
-                    currentText.setSpan(
-                        StrikethroughSpan(),
-                        spanStart,
-                        selectionStart,
-                        Spannable.SPAN_INCLUSIVE_EXCLUSIVE
-                    )
-                }
-                if (spanEnd > selectionEnd) {
-                    // need to add span after
-                    currentText.setSpan(
-                        StrikethroughSpan(),
-                        selectionEnd,
-                        spanEnd,
-                        Spannable.SPAN_EXCLUSIVE_INCLUSIVE
-                    )
-                }
                 currentText.removeSpan(strikethroughSpan)
             }
         }
